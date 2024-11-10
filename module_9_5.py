@@ -12,15 +12,15 @@ class Iterator:
         self.pointer = start
 
     def __iter__(self):
-        self.pointer = self.start  # Сброс указателя на начальное значение
+        self.pointer = self.start
         return self
 
     def __next__(self):
         if (self.step > 0 and self.pointer > self.stop) or (self.step < 0 and self.pointer < self.stop):
-            raise StopIteration  # Завершение итерации
+            raise StopIteration
 
         current = self.pointer
-        self.pointer += self.step  # Увеличение указателя на шаг
+        self.pointer += self.step
         return current
 
 
@@ -36,7 +36,7 @@ iter3 = Iterator(6, 15, 2)
 iter4 = Iterator(5, 1, -1)
 iter5 = Iterator(10, 1)
 
-print()  # Для разделения выводов
+print()
 
 for i in iter2:
     print(i, end=' ')
